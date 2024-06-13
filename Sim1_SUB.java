@@ -12,13 +12,10 @@ public class Sim1_SUB
 			comp.in[i].set(b[i].get());
 		}
 		comp.execute();
-
-
 		for (int i = 0; i < 32; i++) {
 			add.a[i].set(a[i].get());
 			add.b[i].set(comp.out[i].get());
 		}
-
 		add.execute();
 		for (int i = 0; i < 32; i++) {
 			sum[i].set(add.sum[i].get());
@@ -53,8 +50,6 @@ public class Sim1_SUB
 		sum = new RussWire[32];
 
 		add = new Sim1_ADD();
-
-
 		for (int i = 0; i < 32; i++) {
 			a[i] = new RussWire();
 

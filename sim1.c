@@ -29,11 +29,11 @@ void execute_add(Sim1Data *obj)
 	for (int i = 0; i < 32; i++) {
 		currentA = (obj->a >> i) & 0x1;
 		currentB = (b >> i) & 0x1;
-		int sumBit = currentA ^ currentB ^ carry;
+		int currentSum = currentA ^ currentB ^ carry;
 		carry = (currentA & currentB) | (carry & (currentA ^ currentB));
 
 
-		if (sumBit & 0x1) {
+		if (currentSum & 0x1) {
 			obj->sum |= (1 << i);
 		} else {
 			obj->sum &= ~(1 << i);
